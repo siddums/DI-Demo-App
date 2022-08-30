@@ -15,7 +15,7 @@ import com.my.sampleapp.models.RecyclerData
  * @Email: siddushikkerimath@gmail.com
  * @Date: 29-08-2022
  */
-class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
+class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
 
     var items = ArrayList<RecyclerData>()
@@ -24,8 +24,11 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
         items = data
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.MyViewHolder {
-       val layoutInflater = LayoutInflater.from(parent.context)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): MyViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
         val binding = RecyclerviewListItemsBinding.inflate(layoutInflater)
 
         return MyViewHolder(binding)
@@ -33,23 +36,27 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
 
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewAdapter.MyViewHolder, position: Int) {
-         holder.bind(items[position])
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.bind(items[position])
     }
 
-    override fun getItemCount() =  items.size
+    override fun getItemCount() = items.size
 
-    class MyViewHolder(val binding: RecyclerviewListItemsBinding): RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(val binding: RecyclerviewListItemsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(data: RecyclerData) {
             binding.data = data
             binding.executePendingBindings()
         }
     }
 
-    companion object{
+    companion object {
+        // required to make static annotation to avoid crash
         @JvmStatic
+
+        // loading remote image url into imageview using glide library
         @BindingAdapter("loadImage")
-        fun loadImage(thumbImage: ImageView,url: String){
+        fun loadImage(thumbImage: ImageView, url: String) {
             Glide.with(thumbImage)
                 .load(url)
                 .circleCrop()
