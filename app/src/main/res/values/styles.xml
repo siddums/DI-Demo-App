@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="background">@color/cardview_dark_background</item>
+    </style>
+
+    <style name="wraplayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="fullscreen">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_margin">10dp</item>
+
+    </style>
+
+
+    <style name="textBold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textNormal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_margin">30dp</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="imageStyle">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+    </style>
+    <style name="imageLargeStyle">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">220dp</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+    </style>
+
+</resources>

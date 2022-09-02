@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="data"
+        type="com.my.sampleapp.models.RecyclerData" />
+</data>
+    <FrameLayout
+        style="@style/fullscreen"
+        app:cardBackgroundColor="#DAF7A6"
+        tools:context=".ui.fragments.DetailsFragment">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            style="@style/fullscreen"
+            app:cardElevation="8dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/fullscreen">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    style="@style/imageLargeStyle"
+                    android:elevation="7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.496"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.093"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/textBold"
+                    android:text='@{data.name.trim()}'
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                    app:layout_constraintVertical_bias="0.024" />
+
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    style="@style/textNormal"
+                    android:text='@{data.description.trim()}'
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.119"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                    app:layout_constraintVertical_bias="0.139" />
+
+                <TextView
+                    android:id="@+id/tv_login"
+                    style="@style/textNormal"
+                    android:text='@{data.owner.login.trim()}'
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.107"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </FrameLayout>
+
+</layout>
